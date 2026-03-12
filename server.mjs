@@ -83,6 +83,46 @@ server.tool(
   }
 );
 
+// ── Prompt: calculate ───────────────────────────────────────────────────────
+server.prompt(
+  "calculate",
+  "Evaluate a math expression using the calculator tools",
+  {
+    expression: z.string().describe("Math expression to evaluate, e.g. '12 * 7 + 3'"),
+  },
+  async ({ expression }) => ({
+    messages: [
+      {
+        role: "user",
+        content: {
+          type: "text",
+          text: `Please evaluate this expression using the calculator tools: ${expression}`,
+        },
+      },
+    ],
+  })
+);
+
+// ── Prompt: explain-op ──────────────────────────────────────────────────────
+server.prompt(
+  "explain-op",
+  "Explain a math operation step by step",
+  {
+    operation: z.enum(["add", "subtract", "multiply", "divide"]).describe("Operation to explain"),
+  },
+  async ({ operation }) => ({
+    messages: [
+      {
+        role: "user",
+        content: {
+          type: "text",
+          text: `Explain how the '${operation}' tool works and give a simple example using it.`,
+        },
+      },
+    ],
+  })
+);
+
 // ── Start server over stdio ─────────────────────────────────────────────────
 const transport = new StdioServerTransport();
 await server.connect(transport);
