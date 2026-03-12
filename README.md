@@ -59,6 +59,8 @@ Find your Claude Desktop config file:
 Mac: `~/Library/Application Support/Claude/claude_desktop_config.json`
 Windows: `%APPDATA%\Claude\claude_desktop_config.json`
 
+See https://modelcontextprotocol.io/docs/develop/connect-local-servers for details.
+
 Add this (replace the path with your actual folder path):
 ```json
 {
@@ -72,3 +74,5 @@ Add this (replace the path with your actual folder path):
 ```
 
 Restart Claude Desktop. Then try asking Claude: "What is 123 multiplied by 456?" — it will use your multiply tool to answer.
+
+![example ui of claude desktop](image.png)
