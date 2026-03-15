@@ -77,3 +77,8 @@ Restart Claude Desktop. Then try asking Claude: "What is 123 multiplied by 456?"
 
 ![example ui of claude desktop](image.png)
 ![alt text](image-1.png)
+
+## User MCP Inspector
+```bash
+npx @modelcontextprotocol/inspector node ./server.mjs
+```
